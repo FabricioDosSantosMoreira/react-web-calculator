@@ -1,2 +1,3 @@
-# react-web-calculator
-Web calculator built with React, Styled Components &amp; TypeScript
+# 🎲 React Web Calculator
+
+A web calculator built with React, TypeScript & Styled Components
