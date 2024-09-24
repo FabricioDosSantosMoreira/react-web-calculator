@@ -8,9 +8,9 @@ A web calculator built with **React**, **MathJS**, **TypeScript** & **Styled Com
 ## 📖 Features
 
 - Perform basic arithmetic operations
-- History of last 5 valid expressions
+- Keep history of the last 5 valid expressions
 - Clean and responsive UI designed with Styled-Components
-- Real-time expression evaluation using the mathjs library
+- Real time expression evaluation using the mathjs library
 
 
 ## 🌎 Technologies Used
