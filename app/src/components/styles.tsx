@@ -11,13 +11,30 @@ export const Container = styled.div`
     justify-content: center;
 `;
 
+
+export const FixedContent = styled.div`
+    display: block;
+    min-width: 45%;
+    max-width: 45%;
+
+    @media (max-width: 1000px) {
+        min-width: 95%;
+        max-width: 95%;
+    }
+`;
+
 export const Content = styled.div`
     display: flex;
     flex-direction: row; 
     align-items: stretch; 
 
-    width: 60%; 
+    width: auto; 
     height: auto;
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const CalculatorContent = styled.div`
@@ -34,6 +51,10 @@ export const CalculatorContent = styled.div`
     
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1000px) {
+        width: 90%;
+    }
 `;
 
 export const HistoryContent = styled.div`
@@ -71,8 +92,8 @@ export const HistoryContent = styled.div`
 
     ul {
         color: #FFFFFF;
-        font-size: 18px;
-        max-width: 95%;
+        font-size: 12px;
+        max-width: 100%;
         margin: 0px;
         margin-left: 10px;
 
@@ -81,10 +102,17 @@ export const HistoryContent = styled.div`
         text-align: left;
     }
 
+    
     li {
-        word-break: break-all;
-        max-width: 100%;
+        max-width: 95%;
         margin-bottom: 10px;
+
+        word-break: break-all;
+    }
+
+    @media (max-width: 1000px) {
+        width: 90%;
+        border-radius: 10px 0 0 10px;
     }
 `;
 

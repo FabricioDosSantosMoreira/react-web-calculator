@@ -3,7 +3,7 @@ import { MdHistory } from "react-icons/md";
 import { evaluate } from 'mathjs';
 import { useState } from "react"
 
-import { Container, Content, Row, Column, CalculatorContent, HistoryContent } from './components/styles';
+import { Container, Content, Row, Column, CalculatorContent, HistoryContent, FixedContent } from './components/styles';
 import Button from './components/Button';
 import Input from './components/Input';
 
@@ -95,56 +95,58 @@ const App = () => {
 
   return(
 	<Container>
-		<Content>
-			<CalculatorContent>
-				<Column>
-					<Input value={expression} variant="primary" />
-					<Input value={evaluateExpression(expression)} variant="secondary"/>
-				</Column>
-				
-				<Row> 
-				<Button label="C" onClick={() => handleClearExpression()}/>
-				<Button label="CE" onClick={() => handleCancelEntry()}/>
-				<Button label="%" onClick={() => handleAppendChar('%')}/>
-				<Button label="/" onClick={() => handleAppendChar('/')}/>
-				</Row>
-				<Row> 
-				<Button label="7" onClick={() => handleAppendChar('7')}/>
-				<Button label="8" onClick={() => handleAppendChar('8')}/>
-				<Button label="9" onClick={() => handleAppendChar('9')}/>
-				<Button label="*" onClick={() => handleAppendChar('*')}/>
-				</Row>
-				<Row> 
-				<Button label="4" onClick={() => handleAppendChar('4')}/>
-				<Button label="5" onClick={() => handleAppendChar('5')}/>
-				<Button label="6" onClick={() => handleAppendChar('6')}/>
-				<Button label="-" onClick={() => handleAppendChar('-')}/>
-				</Row>
-				<Row> 
-				<Button label="1" onClick={() => handleAppendChar('1')}/>
-				<Button label="2" onClick={() => handleAppendChar('2')}/>
-				<Button label="3" onClick={() => handleAppendChar('3')}/>
-				<Button label="+" onClick={() => handleAppendChar('+')}/>
-				</Row>
-				<Row> 
-				<Button label="." onClick={() => handleAppendChar('.')}/>
-				<Button variant="extraRight" label="0" onClick={() => handleAppendChar('0')}/>
-				<Button label="=" onClick={() => handleResolveExpression()}/>
-				</Row>
-			</CalculatorContent>
+		<FixedContent>
+			<Content>
+				<CalculatorContent>
+					<Column>
+						<Input value={expression} variant="primary" />
+						<Input value={evaluateExpression(expression)} variant="secondary"/>
+					</Column>
+					
+					<Row> 
+						<Button label="C" onClick={() => handleClearExpression()}/>
+						<Button label="CE" onClick={() => handleCancelEntry()}/>
+						<Button label="%" onClick={() => handleAppendChar('%')}/>
+						<Button label="/" onClick={() => handleAppendChar('/')}/>
+					</Row>
+					<Row> 
+						<Button label="7" onClick={() => handleAppendChar('7')}/>
+						<Button label="8" onClick={() => handleAppendChar('8')}/>
+						<Button label="9" onClick={() => handleAppendChar('9')}/>
+						<Button label="*" onClick={() => handleAppendChar('*')}/>
+					</Row>
+					<Row> 
+						<Button label="4" onClick={() => handleAppendChar('4')}/>
+						<Button label="5" onClick={() => handleAppendChar('5')}/>
+						<Button label="6" onClick={() => handleAppendChar('6')}/>
+						<Button label="-" onClick={() => handleAppendChar('-')}/>
+					</Row>
+					<Row> 
+						<Button label="1" onClick={() => handleAppendChar('1')}/>
+						<Button label="2" onClick={() => handleAppendChar('2')}/>
+						<Button label="3" onClick={() => handleAppendChar('3')}/>
+						<Button label="+" onClick={() => handleAppendChar('+')}/>
+					</Row>
+					<Row> 
+						<Button label="." onClick={() => handleAppendChar('.')}/>
+						<Button variant="extraRight" label="0" onClick={() => handleAppendChar('0')}/>
+						<Button label="=" onClick={() => handleResolveExpression()}/>
+					</Row>
+				</CalculatorContent>
 
-			<HistoryContent>
-				<h1><MdHistory/>History</h1>
+				<HistoryContent>
+					<h1><MdHistory/>History</h1>
 
-				<ul>
-					{history.map((entry, index) => (
-						<li key={index}>
-							<FaAngleRight /> {entry}
-						</li>
-					))}
-				</ul>
-			</HistoryContent>
-		</Content>
+					<ul>
+						{history.map((entry, index) => (
+							<li key={index}>
+								<FaAngleRight /> {entry}
+							</li>
+						))}
+					</ul>
+				</HistoryContent>
+			</Content>
+		</FixedContent>
 	</Container>
   )
 };

@@ -27,4 +27,9 @@ export const ButtonContainer = styled.button<IButtonStyled>`
     	width: calc(50% - 5px);
     	flex: 0 0 calc(50% - 5px); 
   	`}
+
+	@media (max-width: 1000px) {
+		font-size: 16px;
+		padding: 10px;
+	}
 `;
