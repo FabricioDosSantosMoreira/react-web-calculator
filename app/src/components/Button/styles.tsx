@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-
 import { IButtonStyled } from './types';
 
 export const ButtonContainer = styled.button<IButtonStyled>`

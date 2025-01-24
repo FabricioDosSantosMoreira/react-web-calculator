@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-
 import { IInputStyled } from './types';
 
 export const InputContainer = styled.div<IInputStyled>`

@@ -1,18 +1,17 @@
 import { FaAngleRight } from "react-icons/fa";
 import { MdHistory } from "react-icons/md";
-
 import { evaluate } from 'mathjs';
 import { useState } from "react"
 
 import { Container, Content, Row, Column, CalculatorContent, HistoryContent } from './components/styles';
-import Button from './components/Button'
-import Input from './components/Input'
+import Button from './components/Button';
+import Input from './components/Input';
 
 
 const App = () => {
 
 	const [expression, setExpression] = useState('0');
-	const [history, setHistory] = useState<string[]>([]);;
+	const [history, setHistory] = useState<string[]>([]);
 
 
 	const handleClearExpression = () => { setExpression('0') };
@@ -61,7 +60,7 @@ const App = () => {
 		}
 
 		if (lastChar === '0' && char !== '0' && char_includes_op) {
-			setExpression(prev => `${prev === '0' ? '0' : prev}${char}`)
+			setExpression(prev => `${prev === '0' ? '0' : prev}${char}`);
 		}
 		else {
 			setExpression(prev => `${prev === '0' ? '' : prev}${char}`);

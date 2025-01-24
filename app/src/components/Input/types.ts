@@ -1,8 +1,8 @@
 export interface IInputProps {
     value: string;
-    variant: string
+    variant: string;
 }
 
 export interface IInputStyled {
-    variant: string
+    variant: string;
 }
