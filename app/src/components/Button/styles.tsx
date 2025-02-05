@@ -20,8 +20,11 @@ export const ButtonContainer = styled.button<IButtonStyled>`
 	&:hover {
 		opacity: 0.8;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-		transform: translateY(2.5px); 
 	}
+
+ 	&:active {
+  		transform: translateY(2.5px); 
+   	}
 
 	${({ variant }) => variant === "extraRight" && css`
     	width: calc(50% - 5px);
